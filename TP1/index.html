@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../master.css">
+    <title>VueJS</title>
+</head>
+<body>
+
+    <div id="app">
+        <label>BTS<input @click="show = true" type="radio" name="bts"></label>
+        <label>PAS BTS<input @click="show = false" type="radio" name="bts"></label>
+
+        <div class="div" v-bind:style="show ? success : (show == null ? waiting : error)">
+            <h1 v-if="show == null">En attente</h1>
+            <h1 v-else-if="show">Bravo!</h1>
+            <h1 v-else>Essaie Encore!</h1>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
